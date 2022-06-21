@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', function () {
 
 window.onload = sendAPIRequest
+const back = document.querySelector('#back');
 
 async function sendAPIRequest() {
     let response = await fetch('https://opentdb.com/api.php?amount=1&type=multiple');
@@ -24,5 +25,5 @@ correctButton.addEventListener("click", () => {
     alert("Correct! Keep smiling!")
     sendAPIRequest()
 })
-
+backButton.addEventListener("click", )
 })
