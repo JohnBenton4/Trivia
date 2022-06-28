@@ -58,7 +58,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 justify-content: space-evenly;
-padding:  30px 30px;
+padding:  25px 25px;
 margin: 30px;
 }
 a.btn.btn-danger.btn-lg {
@@ -67,7 +67,7 @@ width: 200px;
 height: 55px;
 justify-content: center;
 text-align: center;
-margin: 40px;
+margin: 35px;
 }
 a.btn.btn-success.btn-lg {
 display: flex;
@@ -75,15 +75,15 @@ width: 200px;
 height: 55px;
 justify-content: center;
 text-align: center;
-margin: 40px;
+margin: 35px;
 }
 /* img.jump {
 margin-bottom: 19px;
-} */
+}  */
 
 /*if want to make image jump just have to fix the bottom jump*/
 
-/* @keyframes jump {
+ /* @keyframes jump {
 0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
 40%  {transform: translate3d(0,30%,0) scale3d(.5,1.5,1);}
 100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
@@ -143,7 +143,7 @@ to {
 
 
 /*first media*/
-@media screen and (min-width: 320px) and (max-width: 844px) {
+@media screen and (min-width: 1px) and (max-width: 414px) {
 
 .container {
     font-size: 3rem;
@@ -153,7 +153,7 @@ to {
     max-height: 80%;
 }
 #title {
-    font-size: 1.8rem;
+    font-size: 2.7rem;
     margin: -15px;
 }
 p {
@@ -162,9 +162,7 @@ p {
     font-family: 'Roboto Slab', serif;
 }
 .buttons {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;  
+    display: contents;
 }
 .btn-group-lg>.btn, .btn-lg {
     --bs-btn-padding-y: 0.5rem;
@@ -230,7 +228,7 @@ p {
 
 
 /*second media*/
-@media screen and (min-height: 320px) and (max-height: 0px) {
+@media screen and (min-height: 320px) and (max-height: 845px) {
 .container{
     max-width: 75%;
     max-height: 80%;
@@ -245,9 +243,7 @@ p {
 
 }
 .buttons {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    display: contents;
 }
 .btn-group-lg>.btn, .btn-lg {
     --bs-btn-padding-y: 0.5rem;
@@ -310,3 +306,83 @@ p {
 
 
 } 
+ /*third media query*/
+@media screen and (min-width: 415px) and (max-width: 2000px) {
+    .container {
+        font-size: 3rem;
+    }
+    .container{
+        max-width: 75%;
+        max-height: 80%;
+    }
+    #title {
+        font-size: 3rem;
+        margin: -15px;
+    }
+    p {
+        word-wrap: wrap;
+        font-size: 2.4rem;
+        font-family: 'Roboto Slab', serif;
+    }
+    .buttons {
+        display: flex;
+    }
+    .btn-group-lg>.btn, .btn-lg {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 1rem;
+        --bs-btn-font-size: 1.25rem;
+        margin-left: 8px;
+        --bs-btn-border-radius: 0.5rem;
+    }
+    .rocket {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        bottom: -600px;
+        left: 0.2%;
+        animation: fly 9s .7s ease-in;
+        z-index: 1;
+    }
+    .infinite {
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes fly {
+        0% {
+            bottom: -100px;
+        }
+    
+        100% {
+            bottom: 100%;
+        }
+    }
+    .rotate {
+        width: 60px;
+        height: 60px;
+        animation: rotation 12s 1s ease-in-out;
+        position: absolute;
+        right: 3.8%;
+        top: 15%;
+        
+      }
+      
+      .linear {
+        animation-timing-function:ease-in-out;
+      }
+      
+      .infinite {
+        animation-iteration-count: infinite;
+      }
+      
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+          top: 100px;
+        }
+        to {
+          transform: rotate(359deg);
+          top: 75%;
+        }
+      }
+    
+}
