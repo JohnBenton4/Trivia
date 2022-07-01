@@ -30,10 +30,24 @@ window.addEventListener('DOMContentLoaded', function () {
         //Create the index (value) of the one correct answer
         let correctAIndex = answers.findIndex(answer => answer === correctAnswer);
 
+
+
+        //Create incorrectAnswer object to identify the three incorrect answers
+        // let incorrectAnswer = data.results[0].incorrect_answers;
+        //Create the index (value) of the three incorrect answers
+        // let incorrectAIndex = answers.findIndex(answer => answer ===incorrectAnswer)
+
+
+        
         //Group of console logs
         console.log("answersArray", answers);
         console.log("correctAnswer", correctAnswer);
         console.log("correctAIndex", correctAIndex);
+
+
+        // console.log("incorrectAnswer", incorrectAnswer);
+        // console.log("incorrectAIndex", incorrectAIndex);
+
 
         //Selecting the question div
         const questionDiv = document.querySelector("#questionDiv");
@@ -51,7 +65,7 @@ window.addEventListener('DOMContentLoaded', function () {
             button.innerHTML = answer;
             //Giving the button an "id" *****************************
             button.setAttribute("id", `${index}`);
-            //Appending the button to the questoin Div
+            //Appending the button to the question Div
             questionDiv.appendChild(button);
 
         })
@@ -66,6 +80,20 @@ window.addEventListener('DOMContentLoaded', function () {
             //New trivia questions would continue to stack without the reload property.
             location.reload(true)
         })
+        //Creating the incorrectButton element and giving it the incorrect answer index number
+        let incorrectButton = document.getElementById(`${incorrectAIndex}`);
+
+
+
+
+
+
+        //Adding an event listener for when the incorrect answer is selected
+        // incorrectButton.addEventListener("click", () => {
+            //Trigger an alert when the incorrect answer is selected.
+        //     alert("Too bad, Try again")
+        //     location.reload(false)
+        // })
     }
 
     //Adding an event listener for when the back button is clicked.
