@@ -4,7 +4,7 @@
 
 body {
     padding: 0;
-    margin: 0;
+    margin: 0%;
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -24,6 +24,8 @@ body {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
+    margin-top: 0%;
+    
 }
 
 #button1 {
@@ -73,7 +75,7 @@ video {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1;
+    z-index: -2;
 }
 
 .neptune {
@@ -86,15 +88,254 @@ video {
 	to {transform: rotateY(225deg);}
 
 }
-.spin {
+
+  .earth {
+    position: absolute;
+    left: -40%;
+    margin-left: -10px;
+    margin-top: 10%;
+    z-index: -1;
     animation-name: spinning;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
+    animation-duration: 700s;
+    animation-iteration-count:infinite;
     /* linear | ease | ease-in | ease-out | ease-in-out */
-    animation-timing-function: linear;
+    animation-timing-function: ease-out;
   }
   @keyframes spinning {
     from { transform: rotate(0deg) }
     to { transform: rotate(360deg) }
   }
 
+
+
+
+
+/*shooting star*/
+  
+
+  .night {
+    position: relative;
+    width: 1px;
+    height: 10%;
+    transform: rotateZ(45deg);    
+    
+}
+.shooting_star {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    height: 2px;
+    background: linear-gradient(-45deg, rgb(255, 255, 255), rgba(0, 0, 255, 0));
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+    animation: tail 4000ms ease-in-out infinite, shooting 4000ms ease-in-out infinite;
+}
+.shooting_star::before {
+    content: 39;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    animation: shining 4000ms ease-in-out infinite;
+}
+.shooting_star::after {
+    content: 39;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    animation: shining 4000ms ease-in-out infinite;
+    transform: translateX(50%) rotateZ(-45deg);
+}
+.shooting_star:nth-child(1) {
+    top: calc(50% - 21px);
+    left: calc(50% - 21px);
+    animation-delay: 433ms;
+}
+.shooting_star:nth-child(1)::before, .shooting_star:nth-child(1)::after {
+    animation-delay: 433ms;
+}
+/* .shooting_star:nth-child(2) {
+    top: calc(50% - -170px);
+    left: calc(50% - 234px);
+    animation-delay: 2349ms;
+}
+.shooting_star:nth-child(2)::before, .shooting_star:nth-child(2)::after {
+    animation-delay: 2349ms;
+} */
+.shooting_star:nth-child(3) {
+    top: calc(50% - -88px);
+    left: calc(50% - 151px);
+    animation-delay: 5344ms;
+}
+.shooting_star:nth-child(3)::before, .shooting_star:nth-child(3)::after {
+    animation-delay: 5344ms;
+}
+/* .shooting_star:nth-child(4) {
+    top: calc(50% - 52px);
+    left: calc(50% - 214px);
+    animation-delay: 5946ms;
+} */
+/* .shooting_star:nth-child(4)::before, .shooting_star:nth-child(4)::after {
+    animation-delay: 5946ms;
+}
+.shooting_star:nth-child(5) {
+    top: calc(50% - -115px);
+    left: calc(50% - 9px);
+    animation-delay: 3667ms;
+} */
+@keyframes tail {
+    0% {
+        width: 0;
+   }
+    30% {
+        width: 100px;
+   }
+    100% {
+        width: 0;
+   }
+}
+@keyframes shooting {
+    0% {
+        transform: translateX(0);
+   }
+    100% {
+        transform: translateX(300px);
+   }
+}
+
+
+/*media querys*/
+
+@media screen and (min-width: 1px) and (max-width: 1000px) {
+
+
+    .container{
+        max-width: 80%;
+        max-height: 80%;
+    }
+    .earth {
+        margin-right: 40%;
+    }
+    .night {
+        margin-top: 60%;
+    }
+    .jokeHeading {
+        font-size: 2.5rem;
+        text-align: center;
+        font-family: 'Orbitron';
+        color: rgb(243, 222, 44);
+        -webkit-text-stroke: 1.5px black;
+    }
+    #heading {
+        font-size: 25px;
+    }
+    .joke {
+        font-size: 20px;
+    }
+
+}
+    
+
+    /*second media*/
+    @media screen and (min-height: 415px) and (max-height: 1000px) {
+    .container{
+        max-width: 75%;
+        max-height: 80%;
+    }
+    /* .earth {
+        width: 500px;
+        height: 500px;
+        margin-top: 90%;
+        margin-left: -20%;
+    } */
+    .night {
+        margin-top: 60%;
+    }
+    .jokeHeading {
+        font-size: 2.5rem;
+        text-align: center;
+        font-family: 'Orbitron';
+        color: rgb(243, 222, 44);
+        -webkit-text-stroke: 1.5px black;
+    }
+    #heading {
+        font-size: 25px;
+    }
+    .joke {
+        font-size: 20px;
+    }
+
+
+    }
+    @media screen and (min-width: 1px) and (max-width: 990px) {
+
+
+        .container{
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .earth {
+            width: 500px;
+            height: 500px;
+            margin-top: 90%;
+            margin-left: -20%;
+        }
+        .night {
+            margin-top: 60%;
+        }
+        .jokeHeading {
+            font-size: 2.5rem;
+            text-align: center;
+            font-family: 'Orbitron';
+            color: rgb(243, 222, 44);
+            -webkit-text-stroke: 1.5px black;
+        }
+        #heading {
+            font-size: 25px;
+        }
+        .joke {
+            font-size: 20px;
+        }
+    
+    }
+
+    @media screen and (min-width: 416px) and (max-width: 991px) {
+
+
+        .container{
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .earth {
+            position: fixed;
+            width: 500px;
+            height: 600px;
+            margin-top: 40%;
+            margin-left: 20%;
+        }
+        .night {
+            margin-top: 60%;
+        }
+        .jokeHeading {
+            font-size: 2.5rem;
+            text-align: center;
+            font-family: 'Orbitron';
+            color: rgb(243, 222, 44);
+            -webkit-text-stroke: 1.5px black;
+        }
+        #heading {
+            font-size: 25px;
+        }
+        .joke {
+            font-size: 20px;
+        }
+    
+    }
+    
