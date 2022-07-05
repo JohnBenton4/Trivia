@@ -40,9 +40,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
         
         //Group of console logs
-        console.log("answersArray", answers);
-        console.log("correctAnswer", correctAnswer);
-        console.log("correctAIndex", correctAIndex);
+        // console.log("answersArray", answers);
+        // console.log("correctAnswer", correctAnswer);
+        // console.log("correctAIndex", correctAIndex);
 
 
         // console.log("incorrectAnswer", incorrectAnswer);
@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', function () {
             const button = document.createElement("button");
             //Adding the button to the HTML
             button.innerHTML = answer;
-            //Giving the button an "id" *****************************
+            //Giving the button an "id" ******************************************************************
             button.setAttribute("id", `${index}`);
             //Appending the button to the question Div
             questionDiv.appendChild(button);
@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', function () {
             location.reload(true)
         })
         //Creating the incorrectButton element and giving it the incorrect answer index number
-        let incorrectButton = document.getElementById(`${incorrectAIndex}`);
+        // let incorrectButton = document.getElementById(`${incorrectAIndex}`);
 
 
 
