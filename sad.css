@@ -4,7 +4,7 @@
 
 body {
     padding: 0;
-    margin: 0;
+    margin: 0%;
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -15,7 +15,8 @@ body {
 }
 
 .container {
-    min-width: 40%;
+    position: absolute;
+    min-width: 50%;
     min-height: 50%;
     border-radius: 5px;
     padding: 10px;
@@ -24,11 +25,14 @@ body {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
+    margin-top: 0%;
+
 }
 
 #button1 {
     width: 80px;
 }
+
 .btn.btn-primary.btn-md {
     width: 80px;
     border-radius: 7px;
@@ -36,30 +40,37 @@ body {
     margin: 10px;
 }
 
-#heading {
+h1.jokeHeading {
+    font-size: 3.5rem;
+}
+
+p#heading {
     font-family: 'Cutive', serif;
-    font-size: 30px;
+    font-size: 2rem;
     margin: 25px;
     text-align: center;
     color: #f50000;
     -webkit-text-stroke: .5px black;
 }
 
-.joke {
-    color: rgb(0, 0, 0);
-    -webkit-text-stroke: 1px black;
+div.joke {
+    color: #4b04be;
+    -webkit-text-stroke: 1px rgb(45, 8, 255);
     text-align: center;
-    font-size: 1.9rem;
+    font-size: 2rem;
     margin: 20px;
     font-family: 'Chivo', sans-serif;
+    font-family: 'Signika Negative', sans-serif;
 
 }
+
 .jokeArea {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
 }
+
 .btn.btn-warning.btn {
     width: 150px;
 }
@@ -73,28 +84,356 @@ video {
     min-height: 100%;
     width: auto;
     height: auto;
+    z-index: -2;
+}
+
+.earth {
+    position: absolute;
+    left: -40%;
+    margin-left: -10px;
+    margin-top: 10%;
     z-index: -1;
-}
-
-.neptune {
-    transform: rotateY(45deg);
-	animation: rotateAnimation 12s linear infinite;
-}
-
-@keyframes rotateAnimation {
-	from {transform: rotateY(45deg);}
-	to {transform: rotateY(225deg);}
-
-}
-.spin {
     animation-name: spinning;
-    animation-duration: 10s;
+    animation-duration: 77s;
     animation-iteration-count: infinite;
     /* linear | ease | ease-in | ease-out | ease-in-out */
     animation-timing-function: linear;
-  }
-  @keyframes spinning {
-    from { transform: rotate(0deg) }
-    to { transform: rotate(360deg) }
-  }
+}
 
+@keyframes spinning {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(359deg)
+    }
+}
+
+/*shooting star*/
+.night {
+    position: absolute;
+    width: 1px;
+    height: 10%;
+    transform: rotateZ(45deg);
+    margin-left: -70%;
+
+}
+
+.shooting_star {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    height: 2px;
+    background: linear-gradient(-45deg, rgb(255, 255, 255), rgba(0, 0, 255, 0));
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+    animation: tail 4000ms ease-in-out infinite, shooting 4000ms ease-in-out infinite;
+}
+
+.shooting_star::before {
+    content: 39;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    animation: shining 4000ms ease-in-out infinite;
+}
+
+.shooting_star::after {
+    content: 39;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    animation: shining 4000ms ease-in-out infinite;
+    transform: translateX(50%) rotateZ(-45deg);
+}
+
+.shooting_star:nth-child(1) {
+    top: calc(50% - 21px);
+    left: calc(50% - 21px);
+    animation-delay: 433ms;
+}
+
+.shooting_star:nth-child(1)::before,
+.shooting_star:nth-child(1)::after {
+    animation-delay: 433ms;
+}
+
+.shooting_star:nth-child(2) {
+    top: calc(50% - -170px);
+    left: calc(50% - 234px);
+    animation-delay: 2349ms;
+}
+
+.shooting_star:nth-child(2)::before,
+.shooting_star:nth-child(2)::after {
+    animation-delay: 2349ms;
+}
+
+.shooting_star:nth-child(3) {
+    top: calc(50% - -88px);
+    left: calc(50% - 151px);
+    animation-delay: 5344ms;
+}
+
+.shooting_star:nth-child(3)::before,
+.shooting_star:nth-child(3)::after {
+    animation-delay: 5344ms;
+}
+
+@keyframes tail {
+    0% {
+        width: 0;
+    }
+
+    30% {
+        width: 100px;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes shooting {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(300px);
+    }
+}
+
+
+.wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    z-index: 1;
+    margin-left: 35%;
+    margin-bottom: 60%;
+
+}
+
+.div-one {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    z-index: 1;
+}
+
+.div-two {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    animation: animate 196s infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(280deg);
+    }
+
+    100% {
+        transform: rotate(-600deg);
+    }
+
+}
+
+.div-sunarea {
+    padding: 20px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    animation: sun 180s infinite;
+}
+
+@keyframes sun {
+    0% {
+        transform: rotate(140deg);
+    }
+
+    100% {
+        transform: rotate(-600deg);
+    }
+
+}
+
+
+/* this is compatible with the iphone SE*/
+
+@media screen and (max-width: 375px) {
+
+
+    .container {
+        max-width: 80%;
+        min-height: 40%;
+    }
+
+    .earth {
+        margin-right: 40%;
+    }
+
+    .wrapper {
+        display: none;
+    }
+
+    .night {
+        margin-top: 60%;
+    }
+
+    h1.jokeHeading {
+        font-size: 2.5rem;
+        text-align: center;
+        font-family: 'Orbitron';
+        color: rgb(243, 222, 44);
+        -webkit-text-stroke: 1.5px black;
+    }
+
+    p#heading {
+        font-size: 23px;
+        color: #f50000;
+    }
+
+}
+
+/*this works well with iphone 12, and XR */
+@media screen and (max-width: 415px) {
+
+
+    .container {
+        max-width: 80%;
+        min-height: 50%;
+    }
+
+    .earth {
+        width: 500px;
+        height: 500px;
+        margin-top: 90%;
+        margin-left: -20%;
+    }
+
+    .wrapper {
+        display: none;
+    }
+
+    .night {
+        margin-top: 90%;
+    }
+
+    h1.jokeHeading {
+        font-size: 2.5rem;
+        text-align: center;
+        font-family: 'Orbitron';
+        color: rgb(243, 222, 44);
+        -webkit-text-stroke: 1.5px black;
+    }
+
+    p#heading {
+        font-size: 25px;
+    }
+
+    div.joke {
+        font-size: 1.5rem;
+    }
+
+}
+
+/*this works well with monitor */
+@media screen and (min-width: 1200px) {
+
+    .container {
+        max-width: 80%;
+        max-height: 80%;
+    }
+
+    .earth {
+        width: 1300px;
+        height: 1300px;
+        margin-top: 20%;
+        margin-left: 5%;
+    }
+
+    .night {
+        margin-top: 10%;
+
+    }
+
+    .wrapper {
+        z-index: -1;
+    }
+
+    .jokeHeading {
+        font-size: 2.5rem;
+        text-align: center;
+        font-family: 'Orbitron';
+        color: rgb(243, 222, 44);
+        -webkit-text-stroke: 1.5px black;
+    }
+
+    #heading {
+        font-size: 25px;
+    }
+
+    .joke {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    .wrapper {
+        display: none;
+    }
+
+    .earth {
+        width: 300px;
+        height: 300px;
+    }
+
+    .jokeHeading {
+        font-size: 2.5rem;
+        text-align: center;
+        font-family: 'Orbitron';
+        color: rgb(243, 222, 44);
+        -webkit-text-stroke: 1.5px black;
+    }
+}
+
+
+@media screen and (min-width: 416px) and (max-width: 800px) {
+    .wrapper {
+        display: none;
+    }
+
+    .earth {
+        display: none;
+    }
+
+    .jokeHeading {
+        font-size: 2.5rem;
+        text-align: center;
+        font-family: 'Orbitron';
+        color: rgb(243, 222, 44);
+        -webkit-text-stroke: 1.5px black;
+    }
+
+    .container {
+        max-width: 80%;
+        max-height: 80%;
+    }
+}
