@@ -24,7 +24,8 @@ window.addEventListener('DOMContentLoaded', function () {
     //
     function useAPIData(data) {
         //Create answers object to identify the four possible answers
-        let answers = sortArrayRandomly([data.results[0].correct_answer, data.results[0].incorrect_answers[0], data.results[0].incorrect_answers[1], data.results[0].incorrect_answers[2]]);
+        let answers = sortArrayRandomly([data.results[0].correct_answer, data.results[0].incorrect_answers[0], 
+            data.results[0].incorrect_answers[1], data.results[0].incorrect_answers[2]]);
         //Create correctAnswer object to identify the one correct answer
         let correctAnswer = data.results[0].correct_answer;
         //Create the index (value) of the one correct answer
@@ -84,18 +85,9 @@ window.addEventListener('DOMContentLoaded', function () {
         // let incorrectButton = document.getElementById(`${incorrectAIndex}`);
 
 
-
-
-
-
-        //Adding an event listener for when the incorrect answer is selected
-        // incorrectButton.addEventListener("click", () => {
-            //Trigger an alert when the incorrect answer is selected.
-        //     alert("Too bad, Try again")
-        //     location.reload(false)
-        // })
+        //Adding an event listener for when the incorrect answer is selected        // incorrectButton.addEventListener("click", () => {            //Trigger an alert when the incorrect answer is selected.
+        //     alert("Too bad, Try again")        //     location.reload(false)        // })
     }
-
     //Adding an event listener for when the back button is clicked.
     backButton.addEventListener("click", () => {
         //Indicating where the back button will take the user
