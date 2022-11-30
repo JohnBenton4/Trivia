@@ -1,18 +1,65 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
-
 .container {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 30px;
+  margin: 20px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  background: #446484;
+}
+.box {
+  min-width: 40%;
+  min-height: 50%;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px rgb(0, 128, 255);
+  background-color: rgb(0, 165, 207);
+}
+
+p#title {
+  text-align: center;
+  padding: 30px;
+  margin: 20px;
+  font-family: "Orbitron";
+  font-size: 5rem;
+  color: rgb(243, 222, 44);
+  -webkit-text-stroke: 1.5px black;
+}
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+/* iPhone 13  */
+@media screen and (max-width: 415px) {
+  .container {
     color: rgb(255, 255, 255);
     text-align: center;
     padding: 30px;
     margin: 20px;
-}
+  }
 
-
-body {
+  body {
     padding: 0;
     margin: 0;
     display: flex;
@@ -22,29 +69,28 @@ body {
     align-items: center;
     overflow-y: hidden;
     background: #446484;
+  }
 
-}
-.box {
-min-width: 40%;
-min-height: 50%;
-border-radius: 5px;
-padding: 10px;
-box-shadow: 0 0 10px 2px rgb(0, 128, 255);
-background-color:rgb(0, 165, 207);
-}
+  .box {
+    min-width: 40%;
+    min-height: 50%;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px rgb(0, 128, 255);
+    background-color: rgb(0, 165, 207);
+  }
 
-p#title {
+  #title {
     text-align: center;
     padding: 30px;
     margin: 20px;
-    font-family:'Orbitron';
+    font-family: "Orbitron";
     font-size: 5rem;
     color: rgb(243, 222, 44);
     -webkit-text-stroke: 1.5px black;
-  
   }
-  
-video{
+
+  video {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -53,129 +99,57 @@ video{
     width: auto;
     height: auto;
     z-index: -1;
-    }
-
-
-
-
-
-
-
-
-
-
-
-/* iPhone 13  */
-@media screen and (max-width: 415px) {
-    .container {
-        color: rgb(255, 255, 255);
-        text-align: center;
-        padding: 30px;
-        margin: 20px;
-    }
-
-
-    body {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        overflow-y: hidden;
-        background: #446484;
-
-    }
-
-    .box {
-        min-width: 40%;
-        min-height: 50%;
-        border-radius: 5px;
-        padding: 10px;
-        box-shadow: 0 0 10px 2px rgb(0, 128, 255);
-        background-color: rgb(0, 165, 207);
-    }
-
-    #title {
-        text-align: center;
-        padding: 30px;
-        margin: 20px;
-        font-family: 'Orbitron';
-        font-size: 5rem;
-        color: rgb(243, 222, 44);
-        -webkit-text-stroke: 1.5px black;
-
-    }
-
-    video {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -1;
-    }
+  }
 }
-
-
-
-
-
 
 /* iPad 12.9 */
 @media screen and (max-width: 1024px) {
-    .container {
-        color: rgb(255, 255, 255);
-        text-align: center;
-        padding: 30px;
-        margin: 20px;
-    }
+  .container {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 30px;
+    margin: 20px;
+  }
 
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    background: #446484;
+  }
 
-    body {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        overflow-y: hidden;
-        background: #446484;
+  .box {
+    min-width: 40%;
+    min-height: 50%;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px rgb(0, 128, 255);
+    background-color: rgb(0, 165, 207);
+  }
 
-    }
+  #title {
+    text-align: center;
+    padding: 30px;
+    margin: 20px;
+    font-family: "Orbitron";
+    font-size: 5rem;
+    color: rgb(243, 222, 44);
+    -webkit-text-stroke: 1.5px black;
+  }
 
-    .box {
-        min-width: 40%;
-        min-height: 50%;
-        border-radius: 5px;
-        padding: 10px;
-        box-shadow: 0 0 10px 2px rgb(0, 128, 255);
-        background-color: rgb(0, 165, 207);
-    }
-
-    #title {
-        text-align: center;
-        padding: 30px;
-        margin: 20px;
-        font-family: 'Orbitron';
-        font-size: 5rem;
-        color: rgb(243, 222, 44);
-        -webkit-text-stroke: 1.5px black;
-
-    }
-
-    video {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -1;
-    }
+  video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+  }
 }

@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', function () {
 
     //The entire page will load before the API is called. 
-    //Had to move some code around to get all the functions to work prperly since the API is now the last thing that happens.
+    //Had to move some code around to get all the functions to work properly since the API is now the last thing that happens.
     window.onload = sendAPIRequest
 
     //Selecting the back button
@@ -24,31 +24,12 @@ window.addEventListener('DOMContentLoaded', function () {
     //
     function useAPIData(data) {
         //Create answers object to identify the four possible answers
-        let answers = sortArrayRandomly([data.results[0].correct_answer, data.results[0].incorrect_answers[0], 
-            data.results[0].incorrect_answers[1], data.results[0].incorrect_answers[2]]);
+        let answers = sortArrayRandomly([data.results[0].correct_answer, data.results[0].incorrect_answers[0],
+        data.results[0].incorrect_answers[1], data.results[0].incorrect_answers[2]]);
         //Create correctAnswer object to identify the one correct answer
         let correctAnswer = data.results[0].correct_answer;
         //Create the index (value) of the one correct answer
         let correctAIndex = answers.findIndex(answer => answer === correctAnswer);
-
-
-
-        //Create incorrectAnswer object to identify the three incorrect answers
-        // let incorrectAnswer = data.results[0].incorrect_answers;
-        //Create the index (value) of the three incorrect answers
-        // let incorrectAIndex = answers.findIndex(answer => answer ===incorrectAnswer)
-
-
-        
-        //Group of console logs
-        // console.log("answersArray", answers);
-        // console.log("correctAnswer", correctAnswer);
-        // console.log("correctAIndex", correctAIndex);
-
-
-        // console.log("incorrectAnswer", incorrectAnswer);
-        // console.log("incorrectAIndex", incorrectAIndex);
-
 
         //Selecting the question div
         const questionDiv = document.querySelector("#questionDiv");
@@ -64,7 +45,7 @@ window.addEventListener('DOMContentLoaded', function () {
             const button = document.createElement("button");
             //Adding the button to the HTML
             button.innerHTML = answer;
-            //Giving the button an "id" ******************************************************************
+            //Giving the button an "id" 
             button.setAttribute("id", `${index}`);
             //Appending the button to the question Div
             questionDiv.appendChild(button);
@@ -81,12 +62,7 @@ window.addEventListener('DOMContentLoaded', function () {
             //New trivia questions would continue to stack without the reload property.
             location.reload(true)
         })
-        //Creating the incorrectButton element and giving it the incorrect answer index number
-        // let incorrectButton = document.getElementById(`${incorrectAIndex}`);
-
-
-        //Adding an event listener for when the incorrect answer is selected        // incorrectButton.addEventListener("click", () => {            //Trigger an alert when the incorrect answer is selected.
-        //     alert("Too bad, Try again")        //     location.reload(false)        // })
+      
     }
     //Adding an event listener for when the back button is clicked.
     backButton.addEventListener("click", () => {
@@ -94,8 +70,3 @@ window.addEventListener('DOMContentLoaded', function () {
         location.href = "index.html"
     })
 })
-
-// either find or filter - then add an alert listener to the button it finds. Then build the butons as the API pulls the data in (could make the id of the button the index of the array, then get the query selector of the id of the )
-//grab the conatiner in JS and get the API data then create the button elements based off what the random sort is, find/filter correct answer (so I know which index value is correct in the array) 
-//after getting index value - then create buttons one at a time, as I create button I will give the button the ID which will become the index value (give the correct one the correct value)
-//then once I know which one is correct I can run eventlistener on that one
